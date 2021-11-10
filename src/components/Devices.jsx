@@ -9,12 +9,19 @@ const Devices = observer(() => {
     const {device} = useContext(Context)
 
     useEffect(() => {
-        getAllDevices(device.selectedBrandId, device.price.min, device.price.max)
-            .then(data => device.setDevices(data.products))
+        try {
+            getAllDevices(device.selectedBrandId, device.price.min, device.price.max)
+                .then(data => device.setDevices(data.products))
+            device.setIsLoading(false)
+        } catch (e) {
+            console.log(e)
+        }
+
 
     }, [device.selectedBrandId, device.price.min, device.price.max])
 
     return (
+
         <div className='devices'>
             {device.devices.map(device =>
                 <Device
@@ -22,7 +29,10 @@ const Devices = observer(() => {
                     device={device}
                 />
             )}
+
         </div>
+
+
     );
 });
 

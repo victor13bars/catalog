@@ -4,10 +4,11 @@ import Devices from "../components/Devices";
 
 const Catalog = () => {
     return (
-        <div className='catalog'>
+            <div className='catalog'>
                 <TypeBar/>
                 <Devices/>
         </div>
+
     );
 };
 

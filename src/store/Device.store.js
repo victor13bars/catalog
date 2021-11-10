@@ -14,6 +14,7 @@ export default class DeviceStore {
             max: '0'
         }
 
+
         makeAutoObservable(this)
     }
 
@@ -37,6 +38,7 @@ export default class DeviceStore {
         this._price = price
     }
 
+
     get devices() {
         return this._devices
     }
@@ -52,4 +54,6 @@ export default class DeviceStore {
     get price() {
         return this._price
     }
+
+
 }
