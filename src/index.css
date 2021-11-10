@@ -6,10 +6,12 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 54px 0;
+    padding: 64px 0;
 }
 
 .typeBar {
+    display: flex;
+    flex-direction: column;
     width: 224px;
 }
 
@@ -200,6 +202,7 @@
 
 @media (max-width: 800px) {
     .catalog {
+        padding: 47px 0 0 20px;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -207,15 +210,13 @@
 
 @media (max-width: 800px) {
     .typeBar {
-        padding: 0 20px;
-        padding-bottom: 34px;
+        padding-bottom: 15px;
     }
 }
 
 @media (max-width: 800px) {
     .devices {
         margin-left: 0;
-        padding: 0 20px;
     }
 }
 
@@ -229,7 +230,7 @@
 
 @media (max-width: 800px) {
     .device_wrapper {
-        padding: 0 0 0 16px;
+        margin: 20px 16px;
     }
 }
 
@@ -237,6 +238,17 @@
     .device_photo {
         width: 124px;
         height: 124px;
+    }
+}
+
+@media (max-width: 800px) {
+    .device_newDevice {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .device_name {
+      width: 100%;
     }
 }
 
@@ -262,5 +274,15 @@
     }
 }
 
+@media (max-width: 375px) {
+    .type_device {
+        font-size: 26px;
+        order: -1;
+    }
+}
 
-
+@media (max-width: 375px) {
+    .price {
+        margin-top: 18px;
+    }
+}
