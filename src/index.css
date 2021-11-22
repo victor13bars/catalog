@@ -49,7 +49,7 @@
 
 .inputBlock input {
     width: 100%;
-    padding: 10px 0 12px 12px ;
+    padding: 10px 0 12px 12px;
     border: 1px solid #DBDBDB;
     border-radius: 4px;
     font-weight: 500;
@@ -70,18 +70,84 @@
     color: #1B1B1B;
 }
 
-.brand input {
+.brand label {
+    cursor: pointer;
+}
+
+.real-checkbox {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+/*.real-checkbox:focus + .custom-checkbox {*/
+/*    box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 0px #7e9bbd;*/
+/*}*/
+
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
     width: 18px;
     height: 18px;
     border: 1px solid #D0D0D0;
     border-radius: 4px;
     margin-right: 9px;
     cursor: pointer;
+    background: #ffffff;
+    vertical-align: sub;
 }
 
-.brand input:hover {
+.custom-checkbox:hover {
     border: 1px solid #A7A7A7;
 }
+
+.custom-checkbox:before {
+    content: '';
+
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+
+    background-image: url("./icon/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.2s ease-in;
+    /*display: none;*/
+}
+
+.real-checkbox:checked + .custom-checkbox {
+    background: #7993A6;
+    /*border: none;*/
+}
+
+.real-checkbox:checked + .custom-checkbox:before {
+    /*display: inline-block;*/
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/*.brand input[type='checkbox'] {*/
+/*    width: 18px;*/
+/*    height: 18px;*/
+/*    border: 1px solid #D0D0D0;*/
+/*    border-radius: 4px;*/
+/*    margin-right: 9px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.brand input:hover {*/
+/*    border: 1px solid #A7A7A7;*/
+/*}*/
+
+/*.brand input[type='checkbox']:checked {*/
+/*    background: #7993A6*/
+/*}*/
 
 
 .brand:last-child {
@@ -184,7 +250,13 @@
 .heart {
     width: 20px;
     height: 17px;
-    background: url("./icon/heart.png") center center/cover no-repeat;
+    border: none;
+    cursor: pointer;
+    background: url("./icon/blackHeart.png") center center/cover no-repeat;
+}
+
+.heart_active {
+    background: url("./icon/redHeart.png") center center/cover no-repeat;
 }
 
 
@@ -246,9 +318,10 @@
         display: none;
     }
 }
+
 @media (max-width: 800px) {
     .device_name {
-      width: 100%;
+        width: 100%;
     }
 }
 

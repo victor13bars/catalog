@@ -1,4 +1,5 @@
 import React, {memo} from 'react';
+import Heart from "./Heart";
 
 const Device = memo(({device}) => {
 
@@ -21,7 +22,7 @@ const Device = memo(({device}) => {
                 </div>
                 <div className='device_groupBtn'>
                     <button className='device_btn'>В корзину</button>
-                    <div className='heart'></div>
+                    <Heart/>
                 </div>
             </div>
 

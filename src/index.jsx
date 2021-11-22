@@ -13,9 +13,9 @@ ReactDOM.render(
             device: new DeviceStore()
         }
     }>
-        <App />
+        <App/>
     </Context.Provider>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
 
 
