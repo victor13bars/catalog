@@ -18,8 +18,8 @@ const TypeBar = observer(() => {
     return (
         <div className='typeBar'>
             <div className='count_device'>Товаров {device.devices.length}</div>
-            <h1 className='type_device'>Камеры</h1>
-            <h2 className='price'>Цена, ₽</h2>
+            <div className='type_device'>Камеры</div>
+            <div className='price'>Цена, ₽</div>
             <div className='inputBlock'>
                 <input
                     type="text"
@@ -34,7 +34,7 @@ const TypeBar = observer(() => {
                     onBlur={() => device.setPrice(price)}
                 />
             </div>
-            <h2 className='brand_name'>Брэнд</h2>
+            <div className='brand_name'>Брэнд</div>
             {device.brands.map(brand =>
                 <Brand
                     key={brand.id}
